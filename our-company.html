@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frequently Asked Questions - No Knows Houses</title>
+        <title>Our Company - No Knows Houses</title>
 <script type="text/javascript">!function(e){function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}var t={};r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},r.p="/app/themes/carrot/dist/",r(r.s=406)}({406:function(e,r,t){"use strict";var n=t(407);"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(e,r){if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var t=Object(e),n=1;n<arguments.length;n++){var o=arguments[n];if(null!=o)for(var a in o)Object.prototype.hasOwnProperty.call(o,a)&&(t[a]=o[a])}return t},writable:!0,configurable:!0}),(0,n.shimJQuery)()},407:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.shimJQuery=function(){window[n.carrotThemeQ]={},window[n.carrotThemeQ][n.jqueryQName]=[],window.jQuery=function(){return window[n.carrotThemeQ][n.jqueryQName].push([n.INSTANTIATE,arguments]),window.jQuery};for(var e=0;e<o.default.length;e++)!function(e){var r=o.default[e];window.jQuery[r]=function(){window[n.carrotThemeQ][n.jqueryQName].push([n.INSTANCE_METHOD_CALL,r,arguments])}}(e);window.jQuery.extend=function(e,r){return Object.assign(e,r)},window.jQuery._isFake=!0};var n=t(92),o=function(e){return e&&e.__esModule?e:{default:e}}(t(408))},408:function(e,r){e.exports=["add","addBack","addClass","after","ajaxComplete","ajaxError","ajaxSend","ajaxStart","ajaxStop","ajaxSuccess","andSelf","animate","append","appendTo","attr","before","bind","blur","change","children","clearQueue","click","clone","closest","contents","contextmenu","css","data","dblclick","delay","delegate","dequeue","detach","die","each","empty","end","eq","error","fadeIn","fadeOut","fadeTo","fadeToggle","filter","find","finish","first","focus","focusin","focusout","get","has","hasClass","height","hide","hover","html","index","innerHeight","innerWidth","insertAfter","insertBefore","is","jQuery","keydown","keypress","keyup","last","live","load","map","mousedown","mouseenter","mouseleave","mousemove","mouseout","mouseover","mouseup","next","nextAll","nextUntil","not","off","offset","offsetParent","on","one","outerHeight","outerWidth","parent","parents","parentsUntil","position","prepend","prependTo","prev","prevAll","prevUntil","promise","prop","pushStack","queue","ready","remove","removeAttr","removeClass","removeData","removeProp","replaceAll","replaceWith","resize","scroll","scrollLeft","scrollTop","select","serialize","serializeArray","show","siblings","size","slice","slideDown","slideToggle","slideUp","stop","submit","text","toArray","toggle","toggleClass","trigger","triggerHandler","unbind","undelegate","unload","unwrap","val","width","wrap","wrapAll","wrapInner"]},92:function(e,r,t){"use strict";function n(e){if(Array.isArray(e)){for(var r=0,t=Array(e.length);r<e.length;r++)t[r]=e[r];return t}return Array.from(e)}Object.defineProperty(r,"__esModule",{value:!0}),r.shimCatch=function(){var e=window[o];if(e){var r=e[a];if(r&&!(r.length<1)){var t={jq:null};r.forEach(function(e){if(e[0]===i)return t.jq=jQuery(e[1]);if(e[0]===u){var r;return t.jq=(r=t.jq)[e[1]].apply(r,n(e[2]))}})}}};var o=r.carrotThemeQ="CARROT_THEME_SHIM_Q",a=r.jqueryQName="JQUERY_QUEUE",i=r.INSTANTIATE="INSTANTIATE",u=r.INSTANCE_METHOD_CALL="INSTANCE_METHOD_CALL"}});
-//# sourceMappingURL=shim.f34b7a553a66ee4f1325.js.map</script><link rel="canonical" href="faq.html" />
+//# sourceMappingURL=shim.f34b7a553a66ee4f1325.js.map</script><link rel="canonical" href="our-company.html" />
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.noknowshouses.com\/","name":"No Knows Houses"}</script>
 <link rel='dns-prefetch' href='//cdn.carrot.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
@@ -32,8 +32,8 @@
           <script async src="/app/plugins/google-analytics-async/vendor/autotrack.custom.js"></script>
         <link rel="stylesheet" href="https://cdn.carrot.com/artifacts/app/themes/carrot-01/dist/styles/main-01.c3707a8f7b27fc1a2c9ec0ea9049a062.css">
 <link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Ffaq%2F" />
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Ffaq%2F&#038;format=xml" />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Four-company%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Four-company%2F&#038;format=xml" />
   <style>
     @font-face {
   font-family: 'Source Sans Pro';
@@ -194,7 +194,7 @@
   </style>
 
     </head>
-  <body class="page page-id-344 faq logo-full no-hero no-credbar sidebar-primary sitetype-seller">
+  <body class="page page-id-49 our-company logo-full no-hero no-credbar sidebar-primary sitetype-seller">
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
         You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.      </div>
@@ -205,7 +205,7 @@
   <div class="container clearfix">
     <nav class="nav-top">
       <div class="menu-header-navigation-container"><ul id="menu-header-navigation" class="nav"><li id="menu-item-1263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1263"><a href="/">Home</a></li>
-<li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="our-company.html">Our Company</a></li>
+<li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-49 current_page_item menu-item-593"><a href="our-company.html">Our Company</a></li>
 <li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="contact-us.html">Contact Us</a></li>
 </ul></div>          </nav>
     <div itemscope itemtype="https://schema.org/Organization">
@@ -244,7 +244,7 @@
 </ul>
 </li>
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 nav-item"><a title="Get A Cash Offer Today" href="get-a-cash-offer.html" class="nav-link">Get A Cash Offer Today</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-344 current_page_item active menu-item-589 nav-item"><a title="Questions?" href="faq.html" class="nav-link">Questions?</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 nav-item"><a title="Questions?" href="faq.html" class="nav-link">Questions?</a></li>
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-585 nav-item"><a title="How It Works" href="how-we-buy-houses.html" data-hover-group="585" class="dropdown-toggle nav-link" id="menu-item-dropdown-585">How It Works</a>
 <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-585" role="menu">
 	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-591 nav-item"><a title="Resources" href="resource-page.html" class="dropdown-item">Resources</a></li>
@@ -258,63 +258,25 @@
       <div class="content-wrap" role="document">
         <div class="content">
           <main class="main" role="main">
-              <h1>Frequently Asked Questions</h1>
-<p><span style="text-decoration: underline;"><strong>Have a few questions?</strong></span>  Most people do.  So, here&#8217;s a quick collection of some of the common questions we get&#8230; with our answers next to them. If you still have a question don&#8217;t hesitate to shoot us an email through our <a href="/contact-us">contact page</a> (or give us a call).</p>
-<p><strong>Q:  Are you actually listing my house on the MLS or buying it?<br />
-</strong>A:  Great question. We&#8217;re not agents, and we don&#8217;t list houses.  <strong><a href="/">We buy houses Philadelphia</a></strong> that fit our buying criteria. From there we may repair the house and resell it to another home owner or keep it as a rental ourselves.</p>
-<p><strong>Q:  Do you pay fair prices for properties?</strong><br />
-A:  We have to purchase a house below market value so we can resell it at a profit to another home owner.  However, if you&#8217;re in foreclosure you likely don&#8217;t have equity&#8230; so we can often negotiate with the lender for a discount on the property. In the end, we have to get a fair discount on a property so we have room to make a profit when we resell it.  But, we bring to the table a fast, no hassle, all-cash offer&#8230; we can close quickly, are very flexible on terms of the sale, and will buy your house in any condition. If thats what you&#8217;re looking for and you see the value in getting your house sold fast&#8230; lets talk and see if we can come to a fair win-win price.</p>
-<p><em><span style="color: #000000;">[<span style="text-decoration: underline; color: #0000ff;"><a href="/go/selling-to-investor/" target="_blank"><span style="color: #0000ff; text-decoration: underline;"><strong>DOWNLOAD our free guide that walks you through the Pros and Cons</strong> </span></a></span>(plus the cost and timeline) of selling your house to a real estate investor&#8230; plus learn the pros, cons, and costs of the other two alternatives&#8230; listing with an agent or selling it yourself. <span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="/go/selling-to-investor/" target="_blank"><span style="color: #0000ff; text-decoration: underline;">Head on over here download your free guide &lt;&lt;</span></a></span>]</span></span></em></p>
-<p><strong>Q:  How do you determine the price to offer on my house?</strong><br />
-A:  Great question and we&#8217;re an open book&#8230; so I&#8217;m glad you asked.  Our process is rather simple. We look at the <em><strong>location</strong></em>, what <em><strong>repairs</strong></em> are needed, <em><strong>condition</strong></em>, and values of comparable houses sold in the area recently. As you know, house values have taken a huge hit in the last 5 years and most areas still haven&#8217;t seen prices come back up.  So, we take everything into consideration&#8230; and come up with a fair price that works for us and works for you too.</p>
-<p><strong>Q:  Are there any fees or commissions to work with you?</strong><br />
-A:  There are <span style="text-decoration: underline;">NO fees</span> or commissions to work with us.  We&#8217;ll make you an offer, and if its a fit&#8230; we&#8217;ll buy your house (<span style="text-decoration: underline;"><em>and we&#8217;ll often pay for the closing costs too!</em></span>).  No hassle. No fees.  We make our money after we pay for repairs on the house (if any) to fix it up so it&#8217;s nice and pretty&#8230; market the house, and sell it for a profit (we&#8217;re taking all of the risk here on whether we can sell it for a profit or not, once we buy the house from you&#8230; the responsibility is ours and you walk away without the burden of the property and it&#8217;s payments&#8230; and oftentimes with cash in your hand).</p>
-<p><strong>Q:  How are you different from a real estate agent?</strong><br />
-A:  Real estate agents list properties and hope that someone will buy them. The average time to sell a property in many markets right now is 6-12 months.  As you know, you pay a commission as a % of the sales price when you work with a real estate agent. Often times it&#8217;s 3-6% of the sales price (so if it&#8217;s a $100,000 house, you&#8217;ll pay between $3,000 &#8211; $6,000 in commissions to an agent).  Agents provide a great service for those that can wait 6-12 months in many cases to sell and who have room to pay the commission on the sale.  Our company actually buys houses. We don&#8217;t list houses.  Since we&#8217;re actually the one buying the house from you, and we pay with all cash&#8230; we can make a decision to buy your house within a couple days (sometimes the same day).  Again, we make our living by taking the risk to buy the house with our own cash, repair the house, and market it ourselves to find a buyer (which is the hard part in this market).</p>
-<p><strong>Q:  Is there any obligation when I submit my info?</strong><br />
-A:  No obligation at all. Once you tell us a bit about your property, we&#8217;ll take a look at things, maybe set up a call with you to find out a bit more, and make you an all-cash offer thats fair for you and fair for us. From there, it&#8217;s 100% your decision on whether or not you&#8217;d like to sell your house to us&#8230; and we won&#8217;t hassle you, won&#8217;t harass you&#8230; it&#8217;s 100% your decision and we&#8217;ll let decide what&#8217;s right for you.</p>
+              <h1>About Us</h1>
+<p>Our biggest priority is to provide solutions to help homeowners get out of their sticky situations. We assist people facing foreclosure, people that own headache properties, family members going through the probate process and everything and anything else.  No problem is too big and no problem is too small. We get personally involved to make sure you walk away happy!</p>
+<p>BMB Real Estate is a real estate solutions company based out of Philadelphia.  We&#8217;re a family owned business and focus on helping homeowners like you find solutions for your problem whether you&#8217;re going through a divorce, can&#8217;t sell your property, or just need to sell their house for all kinds of reasons.</p>
+<h2>How We Work With Homeowners</h2>
+<p>If you have any questions about <a href="how-we-buy-houses.html">how we work,</a> what the process of selling a house or having us help you avoid foreclosure, or just want to learn more about us&#8230; don&#8217;t hesitate to <a href="contact-us.html">contact us</a> anytime!</p>
+<h2>Our Team</h2>
 <p>&nbsp;</p>
-<h1 style="text-align: center;">Want To See What We Can Buy Your House For?</h1>
-<h2 style="text-align: center;">Fill Out The Quick Form Below To Get A No-Hassle<br />
-No-Obligation All-Cash Offer</h2>
-<p style="text-align: center;">
-                <div class='gf_browser_unknown gform_wrapper' id='gform_wrapper_5' ><a id='gf_5' class='gform_anchor' ></a><form method='post' enctype='multipart/form-data'  id='gform_5'  action='faq.html#gf_5'>
-                        <div class='gform_body'><ul id='gform_fields_5' class='gform_fields top_label form_sublabel_below description_below'><li id='field_5_1' class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label gfield_label_before_complex' for='input_5_1_3' >Name<span class='gfield_required'>*</span></label><div class='ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name' id='input_5_1'>
-                            <span id='input_5_1_3_container' class='name_first' >
-                                                    <input type='text' name='input_1.3' id='input_5_1_3' value='' aria-label='First name'   aria-required="true" aria-invalid="false" />
-                                                    <label for='input_5_1_3' >First</label>
-                                               </span>
-                            <span id='input_5_1_6_container' class='name_last' >
-                                                    <input type='text' name='input_1.6' id='input_5_1_6' value='' aria-label='Last name'   aria-required="true" aria-invalid="false" />
-                                                    <label for='input_5_1_6' >Last</label>
-                                                </span>
-                            <div class='gf_clear gf_clear_complex'></div>
-                        </div></li><li id='field_5_3' class='gfield gf_left_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_3' >Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
-                            <input name='input_3' id='input_5_3' type='text' value='' class='medium'    />
-                        </div></li><li id='field_5_2' class='gfield gf_right_half field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_2' >Phone</label><div class='ginput_container ginput_container_phone'><input name='input_2' id='input_5_2' type='text' value='' class='medium'     aria-invalid="false" /></div></li><li id='field_5_8' class='gfield gf_left_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_8' >Property Address<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_5_8' type='text' value='' class='medium'     aria-required="true" aria-invalid="false" /></div></li><li id='field_5_5' class='gfield gf_right_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_5' >Property Zip Code<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_text'><input name='input_5' id='input_5_5' type='text' value='' class='large'     aria-required="true" aria-invalid="false" /></div></li><li id='field_5_6' class='gfield gf_left_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_6' >#Beds<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_select'><select name='input_6' id='input_5_6'  class='medium gfield_select'   aria-required="true" aria-invalid="false"><option value='1' >1</option><option value='2' >2</option><option value='3' >3</option><option value='4' >4</option><option value='5+' >5+</option></select></div></li><li id='field_5_7' class='gfield gf_right_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_7' >#Baths<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_select'><select name='input_7' id='input_5_7'  class='medium gfield_select'   aria-required="true" aria-invalid="false"><option value='1' >1</option><option value='2' >2</option><option value='3' >3</option><option value='4' >4</option><option value='5+' >5+</option></select></div></li><li id='field_5_9' class='gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_' ><label class='gfield_label' for='input_5_9' >Name</label><div class='ginput_container'><input name='input_9' id='input_5_9' type='text' value='' /></div><div class='gfield_description'>This field is for validation purposes and should be left unchanged.</div></li>
-                            </ul></div>
-        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_5' class='gform_button button' value='Get Your Cash Offer NOW'  onclick='if(window["gf_submitting_5"]){return false;}  window["gf_submitting_5"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_5"]){return false;} window["gf_submitting_5"]=true;  jQuery("#gform_5").trigger("submit",[true]); }' />
-            <input type='hidden' class='gform_hidden' name='is_submit_5' value='1' />
-            <input type='hidden' class='gform_hidden' name='gform_submit' value='5' />
-
-            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
-            <input type='hidden' class='gform_hidden' name='state_5' value='WyJbXSIsIjU2MTVjN2VlOTYzMzE4OGM5YWIwOGM4MzBiODdkYmM5Il0=' />
-            <input type='hidden' class='gform_hidden' name='gform_target_page_number_5' id='gform_target_page_number_5' value='0' />
-            <input type='hidden' class='gform_hidden' name='gform_source_page_number_5' id='gform_source_page_number_5' value='1' />
-            <input type='hidden' name='gform_field_values' value='' />
-
-        </div>
-                        </form>
-                        </div></p>
-<h3></h3>
-<h3>&#8212;</h3>
+<p><strong> <img src="https://lh4.googleusercontent.com/-N_OJ62o4yco/Utq1vwU2vgI/AAAAAAAAAmE/EoVU9wZiRPI/w140-h139-p/IMG_9971.JPG" alt="" />Chief Executive Officer: [Noel Lumbo]</strong></p>
+<p>&nbsp;</p>
+<h2 style="text-align: center"><span style="color: #ff0000"><strong>Call or Text Us Today! (267) 908 3860</strong></span></h2>
+<h2 style="text-align: center"></h2>
+<p style="text-align: center">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
 <h3><strong>5 Ways To Stop or Avoid Foreclosure In Today’s Market – FREE Guide:</strong></h3>
-<p><img class="alignleft" alt="" src="https://cdn.carrot.com/images/reports/5-ways-foreclosure.png" width="96" height="108" />Need more information on the foreclosure process and <strong>How To Stop Foreclosure</strong>?  <span style="color: #0000ff;"><a href="/go/stop-foreclosure/"><span style="color: #0000ff;"><strong>Download our FREE Stop Foreclosure Guide here</strong>.</span></a></span> Or, you can always feel free to <span style="color: #0000ff;"><a href="contact-us.html"><span style="color: #0000ff;">Contact us</span></a></span> anytime if you have questions, want a no hassle Situation Evaluation, or want to just learn more about how we can help homeowners avoid foreclosure or sell unwanted properties for cash.</p>
+<p><img class="alignleft" src="https://cdn.carrot.com/images/reports/5-ways-foreclosure.png" alt="" width="96" height="108" />Need more information on the foreclosure process and <strong>How To Stop Foreclosure</strong>?  <span style="color: #0000ff"><a href="/go/stop-foreclosure/"><span style="color: #0000ff"><strong>Download our FREE Stop Foreclosure Guide here</strong>.</span></a></span> Or, you can always feel free to <span style="color: #0000ff"><a href="contact-us.html"><span style="color: #0000ff">Contact us</span></a></span> anytime if you have questions, want a no hassle Situation Evaluation, or want to just learn more about how we can help homeowners avoid foreclosure or sell unwanted properties for cash.</p>
 <div class="entry-share">
 <ul class="entry-share-btns">
 
               <li class="entry-share-btn entry-share-btn-facebook">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.noknowshouses.com%2Ffaq%2F" title="Share on Facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.noknowshouses.com%2Four-company%2F" title="Share on Facebook">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64"><path d="M42 12c-5.523 0-10 4.477-10 10v6h-8v8h8v28h8V36h9l2-8H40v-6c0-1.105.895-2 2-2h10v-8H42z" fill="#fff"></svg>
                   <b>Share</b>
                 </a>
@@ -322,7 +284,7 @@ No-Obligation All-Cash Offer</h2>
 
 
               <li class="entry-share-btn entry-share-btn-twitter">
-                <a href="https://twitter.com/intent/tweet?text=Frequently+Asked+Questions+-+No+Knows+Houses&url=https%3A%2F%2Fwww.noknowshouses.com%2Ffaq%2F" title="Share on Twitter">
+                <a href="https://twitter.com/intent/tweet?text=Our+Company+-+No+Knows+Houses&url=https%3A%2F%2Fwww.noknowshouses.com%2Four-company%2F" title="Share on Twitter">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64"><path d="M64 12.15c-2.355 1.045-4.885 1.75-7.54 2.068 2.71-1.625 4.792-4.198 5.772-7.264-2.537 1.505-5.347 2.597-8.338 3.186-2.395-2.552-5.808-4.146-9.584-4.146-7.25 0-13.13 5.88-13.13 13.13 0 1.03.116 2.03.34 2.992-10.912-.548-20.588-5.775-27.064-13.72-1.13 1.94-1.778 4.196-1.778 6.602 0 4.556 2.318 8.575 5.84 10.93-2.15-.07-4.176-.66-5.946-1.643v.165c0 6.362 4.525 11.668 10.532 12.875-1.102.3-2.262.46-3.46.46-.845 0-1.668-.082-2.47-.235 1.672 5.216 6.52 9.013 12.267 9.118-4.493 3.522-10.154 5.62-16.306 5.62-1.06 0-2.105-.06-3.132-.183 5.81 3.726 12.713 5.9 20.128 5.9 24.15 0 37.358-20.008 37.358-37.36 0-.568-.013-1.135-.038-1.698 2.566-1.85 4.792-4.164 6.552-6.797z" fill="#fff"></svg>
                   <b>Tweet</b>
                 </a>
@@ -342,7 +304,31 @@ No-Obligation All-Cash Offer</h2>
           </blockquote>
     </div>
 
-  </section>       </aside><!-- /.sidebar -->
+  </section><section class="widget module pu_facebook_widget-3 pu_facebook_widget"><h3>Like Us</h3>            <div class="fb-like-box"
+            	data-href="https://www.facebook.com/NoKnowsHouses/"
+            	data-width="292"
+            	data-show-faces="true"
+            	data-stream="false"
+            	data-header="true"
+            	data-border-color=""></div>
+		</section><section class="widget module widget_sp_image-2 widget_sp_image"><a href="/how-to-stop-foreclosure/" target="_self" class="widget_sp_image-image-link" title="click to stop foreclosure"><img width="321" height="190" alt="click to stop foreclosure" class="attachment-full" style="max-width: 100%;" src="https://cdn.carrot.com/uploads/sites/2507/2013/04/Screen-shot-2013-04-25-at-5.50.46-PM.png" /></a></section>		<section class="widget module recent-posts-3 widget_recent_entries">		<h3>Recent Posts</h3>		<ul>
+											<li>
+					<a href="/sell-a-house-with-a-lien-philadelphia/">Can I Sell A Philadelphia House With a Lien?</a>
+									</li>
+											<li>
+					<a href="/sell-my-house-fast-in-philadelphia/">SELL MY HOUSE FAST IN PHILADELPHIA: Fact or Myth?</a>
+									</li>
+											<li>
+					<a href="/can-you-sell-a-house-as-is-in-philadelphia/">Can You Sell a House As Is in Philadelphia?</a>
+									</li>
+											<li>
+					<a href="/sell-your-house-quickly-for-market-value-in-philadelphia/">Sell Your House Quickly for Market Value in Philadelphia</a>
+									</li>
+											<li>
+					<a href="/the-costs-and-taxes-on-selling-a-house-in-philadelphia/">The Costs and Taxes on Selling a House in Philadelphia</a>
+									</li>
+					</ul>
+		</section>            </aside><!-- /.sidebar -->
                   </div><!-- /.content -->
       </div><!-- /.content-wrap -->
     </div><!-- /.wrap -->
@@ -362,8 +348,8 @@ No-Obligation All-Cash Offer</h2>
         <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="nav"><li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="get-a-cash-offer.html">Get A Cash Offer Today</a></li>
 <li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="contact-us.html">Contact Us</a></li>
 <li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="how-we-buy-houses.html">How It Works</a></li>
-<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-344 current_page_item menu-item-588"><a href="faq.html">Frequently Asked Questions</a></li>
-<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590"><a href="our-company.html">Our Company</a></li>
+<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588"><a href="faq.html">Frequently Asked Questions</a></li>
+<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-49 current_page_item menu-item-590"><a href="our-company.html">Our Company</a></li>
 <li id="menu-item-592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-592"><a href="resource-page.html">Resources</a></li>
 <li id="menu-item-736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-736"><a href="privacy.html">Privacy Policy</a></li>
 
@@ -390,6 +376,6 @@ No-Obligation All-Cash Offer</h2>
 				  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=";
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));</script><script src="https://cdn.carrot.com/artifacts/app/themes/carrot/dist/scripts/main.325bc4c184aae6e669ad.js"></script>
-<script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 5) {if(!/(android)/i.test(navigator.userAgent)){jQuery('#input_5_2').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );}} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [5, 1]) } ); </script>
-  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"045370bc37","applicationID":"9651406","transactionName":"YlUGMURWV0sEB0xeWFsfMRdfGFBWAQFAGUddQA==","queueTime":2,"applicationTime":237,"atts":"ThIFRwxMREU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"045370bc37","applicationID":"9651406","transactionName":"YlUGMURWV0sEB0xeWFsfMRdfGFBWAQFAGUddQA==","queueTime":1,"applicationTime":174,"atts":"ThIFRwxMREU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
