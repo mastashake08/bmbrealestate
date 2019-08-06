@@ -4,14 +4,13 @@
 <html lang="en-US" class="no-js">
   <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Testimonials - No Knows Houses</title>
+        <title>Sell Your House - No Knows Houses</title>
 <script type="text/javascript">!function(e){function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}var t={};r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},r.p="/app/themes/carrot/dist/",r(r.s=406)}({406:function(e,r,t){"use strict";var n=t(407);"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(e,r){if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var t=Object(e),n=1;n<arguments.length;n++){var o=arguments[n];if(null!=o)for(var a in o)Object.prototype.hasOwnProperty.call(o,a)&&(t[a]=o[a])}return t},writable:!0,configurable:!0}),(0,n.shimJQuery)()},407:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.shimJQuery=function(){window[n.carrotThemeQ]={},window[n.carrotThemeQ][n.jqueryQName]=[],window.jQuery=function(){return window[n.carrotThemeQ][n.jqueryQName].push([n.INSTANTIATE,arguments]),window.jQuery};for(var e=0;e<o.default.length;e++)!function(e){var r=o.default[e];window.jQuery[r]=function(){window[n.carrotThemeQ][n.jqueryQName].push([n.INSTANCE_METHOD_CALL,r,arguments])}}(e);window.jQuery.extend=function(e,r){return Object.assign(e,r)},window.jQuery._isFake=!0};var n=t(92),o=function(e){return e&&e.__esModule?e:{default:e}}(t(408))},408:function(e,r){e.exports=["add","addBack","addClass","after","ajaxComplete","ajaxError","ajaxSend","ajaxStart","ajaxStop","ajaxSuccess","andSelf","animate","append","appendTo","attr","before","bind","blur","change","children","clearQueue","click","clone","closest","contents","contextmenu","css","data","dblclick","delay","delegate","dequeue","detach","die","each","empty","end","eq","error","fadeIn","fadeOut","fadeTo","fadeToggle","filter","find","finish","first","focus","focusin","focusout","get","has","hasClass","height","hide","hover","html","index","innerHeight","innerWidth","insertAfter","insertBefore","is","jQuery","keydown","keypress","keyup","last","live","load","map","mousedown","mouseenter","mouseleave","mousemove","mouseout","mouseover","mouseup","next","nextAll","nextUntil","not","off","offset","offsetParent","on","one","outerHeight","outerWidth","parent","parents","parentsUntil","position","prepend","prependTo","prev","prevAll","prevUntil","promise","prop","pushStack","queue","ready","remove","removeAttr","removeClass","removeData","removeProp","replaceAll","replaceWith","resize","scroll","scrollLeft","scrollTop","select","serialize","serializeArray","show","siblings","size","slice","slideDown","slideToggle","slideUp","stop","submit","text","toArray","toggle","toggleClass","trigger","triggerHandler","unbind","undelegate","unload","unwrap","val","width","wrap","wrapAll","wrapInner"]},92:function(e,r,t){"use strict";function n(e){if(Array.isArray(e)){for(var r=0,t=Array(e.length);r<e.length;r++)t[r]=e[r];return t}return Array.from(e)}Object.defineProperty(r,"__esModule",{value:!0}),r.shimCatch=function(){var e=window[o];if(e){var r=e[a];if(r&&!(r.length<1)){var t={jq:null};r.forEach(function(e){if(e[0]===i)return t.jq=jQuery(e[1]);if(e[0]===u){var r;return t.jq=(r=t.jq)[e[1]].apply(r,n(e[2]))}})}}};var o=r.carrotThemeQ="CARROT_THEME_SHIM_Q",a=r.jqueryQName="JQUERY_QUEUE",i=r.INSTANTIATE="INSTANTIATE",u=r.INSTANCE_METHOD_CALL="INSTANCE_METHOD_CALL"}});
-//# sourceMappingURL=shim.f34b7a553a66ee4f1325.js.map</script><link rel="canonical" href="testimonials.html" />
+//# sourceMappingURL=shim.f34b7a553a66ee4f1325.js.map</script><link rel="canonical" href="https://bornmadebossesre.com//sell-your-house/" />
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.noknowshouses.com\/","name":"No Knows Houses"}</script>
 <link rel='dns-prefetch' href='//cdn.carrot.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
 
 
     <script>
@@ -30,10 +29,7 @@
     </script>
                 <script async src="https://www.google-analytics.com/analytics.js"></script>
           <script async src="/app/plugins/google-analytics-async/vendor/autotrack.custom.js"></script>
-        <link rel="stylesheet" href="https://cdn.carrot.com/artifacts/app/themes/carrot-01/dist/styles/main-01.c3707a8f7b27fc1a2c9ec0ea9049a062.css">
-<link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Ftestimonials%2F" />
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.noknowshouses.com%2Ftestimonials%2F&#038;format=xml" />
+        <link rel="stylesheet" href="https://cdn.carrot.com/artifacts/app/themes/carrot-01/dist/styles/main-01.8b2d2d5ba9685a0d62c4562925a6452f.css">
   <style>
     @font-face {
   font-family: 'Source Sans Pro';
@@ -194,7 +190,7 @@
   </style>
 
     </head>
-  <body class="page-template page-template-template-feedback page-template-template-feedback-php page page-id-24 testimonials logo-full no-hero no-credbar sidebar-primary sitetype-seller">
+  <body class="page page-id-20 env-production user-switched sell-your-house logo-full no-hero no-credbar sidebar-primary sitetype-seller">
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
         You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.      </div>
@@ -204,13 +200,13 @@
 <header class="banner" role="banner">
   <div class="container clearfix">
     <nav class="nav-top">
-      <div class="menu-header-navigation-container"><ul id="menu-header-navigation" class="nav"><li id="menu-item-1263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1263"><a href="/">Home</a></li>
-<li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="our-company.html">Our Company</a></li>
-<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="contact-us.html">Contact Us</a></li>
+      <div class="menu-header-navigation-container"><ul id="menu-header-navigation" class="nav"><li id="menu-item-1263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1263"><a href="https://bornmadebossesre.com//">Home</a></li>
+<li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="https://bornmadebossesre.com//our-company/">Our Company</a></li>
+<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="https://bornmadebossesre.com//contact-us/">Contact Us</a></li>
 </ul></div>          </nav>
     <div itemscope itemtype="https://schema.org/Organization">
-      <a class="brand brand-primary" itemprop="url" href="/">
-                  <img itemprop="logo" class="brand-logo" src="bg.jpg" alt="No Knows Houses logo">
+      <a class="brand brand-primary" itemprop="url" href="https://bornmadebossesre.com//">
+                  <img itemprop="logo" class="brand-logo" src="https://cdn.oncarrot.com/uploads/sites/2507/2016/01/noknows-logo-e1453841372401.png" alt="No Knows Houses logo">
 
         <b itemprop="name">No Knows Houses</b>
         <span class="tagline">Need To Sell Your House Fast? We&#039;ll Buy It All Cash and As-Is</span>
@@ -238,35 +234,52 @@
       </button>
       <div id='nav-primary' class='collapse navbar-collapse'>
 
-  <ul id="menu-main-navigation" class="navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-582 nav-item"><a title="Sell Your Home" href="/sell-your-house/" data-hover-group="582" class="dropdown-toggle nav-link" id="menu-item-dropdown-582"><b>Sell Your Home</b></a>
-<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-582" role="menu">
-	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583 nav-item"><a title="Keep Your Home" href="/save-your-home/" class="dropdown-item">Keep Your Home</a></li>
-</ul>
-</li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 nav-item"><a title="Get A Cash Offer Today" href="get-a-cash-offer.html" class="nav-link">Get A Cash Offer Today</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 nav-item"><a title="Questions?" href="faq.html" class="nav-link">Questions?</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-585 nav-item"><a title="How It Works" href="how-we-buy-houses.html" data-hover-group="585" class="dropdown-toggle nav-link" id="menu-item-dropdown-585">How It Works</a>
-<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-585" role="menu">
-	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-591 nav-item"><a title="Resources" href="resource-page.html" class="dropdown-item">Resources</a></li>
-</ul>
-</li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-581" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-24 current_page_item active menu-item-581 nav-item"><a title="Testimonials" href="testimonials.html" class="nav-link">Testimonials</a></li>
-</ul>
-  </div>    </div>
+        <ul id="menu-main-navigation" class="navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-582 nav-item"><a title="Sell Your Home" href="/sell-your-house.html" data-hover-group="582" class="dropdown-toggle nav-link" id="menu-item-dropdown-582"><b>Sell Your Home</b></a>
+          <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-582" role="menu">
+	           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583 nav-item"><a title="Keep Your Home" href="save-your-home.html" class="dropdown-item">Keep Your Home</a></li>
+           </ul>
+      </li>
+      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 nav-item"><a title="Get A Cash Offer Today" href="get-a-cash-offer.html" class="nav-link">Get A Cash Offer Today</a></li>
+      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 nav-item"><a title="Questions?" href="faq.html" class="nav-link">Questions?</a></li>
+      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-585 nav-item"><a title="How It Works" href="how-we-buy-houses.html" data-hover-group="585" class="dropdown-toggle nav-link" id="menu-item-dropdown-585">How It Works</a>
+      <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-585" role="menu">
+      	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-591 nav-item"><a title="Resources" href="resource-page.html" class="dropdown-item">Resources</a></li>
+      </ul>
+      </li>
+      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-581 nav-item"><a title="Testimonials" href="testimonials.html" class="nav-link">Testimonials</a></li>
+      </ul>
+  </div>     </div>
   </nav>
 </header>
       <div class="content-wrap" role="document">
         <div class="content">
           <main class="main" role="main">
+              <h1 style="text-align: left">We Buy Properties In Any Condition &#8211; See If Your Property Qualifies For Us To Make You An <span style="text-decoration: underline">All Cash Offer Below</span>&#8230;</h1>
+<p>See how&#8230;</p>
+<p style="text-align: left">So, do any of these describe you?</p>
+<ul>
+<li>Are You In <strong>Foreclosure</strong> or Are About To Be?</li>
+<li>Do You Own <strong>Unwanted Rental Property</strong>?</li>
+<li>Do You Own A <strong>Vacant Property</strong>?</li>
+<li>Did You <strong>Inherit An Unwanted Property</strong>?</li>
+<li>Do You <strong>Need To Relocate Quickly</strong> And Need To Sell Your Current House Fast?</li>
+<li>Do You Want To <strong>Avoid Paying Realtor Commissions</strong>?</li>
+<li>Are You Going Through A <strong>Divorce</strong>?</li>
+<li>Do You <strong>Have Little Or No Equity</strong> And Need To Sell?</li>
+</ul>
+<p><strong>If so, our company specializes in solving real estate problems</strong>&#8230; especially ones that pose a financial burden on you the homeowner.  We can solve almost any financial problem that real estate throws at you.</p>
+<p>Our entire focus is to<span style="text-decoration: underline"> empower you to take back control over your situation</span>, by knowing all of the options available to you right now.  By simply filling out the short form below or giving us a call, we can help you make sense of all of this confusion and present you with your options that can potentially change your life and get it back to normal.</p>
+<p>After you send us information about your situation below, usually within 24 hours we&#8217;ll give you a call so we can show you the options to help solve your current situation.</p>
+<p>All of this 100% free to you (we don&#8217;t charge you any fees). 100% <span style="text-decoration: underline">no hassle</span>. 100% <span style="text-decoration: underline">no obligation</span>. <span style="text-decoration: underline">No commitment</span>.</p>
 
-  <h1>What Others Say&#8230;</h1>
-<p>It&#8217;s important to us that the homeowners we work with have a great experience with us.  In the end, we&#8217;re not happy if we&#8217;re not able to provide you with the solution you want.  So, check out what others have said about us. Here&#8217;s just a few snippets of what other people we&#8217;ve worked with have said.</p>
-<p>Want to share your own experience with us? <a href="mailto:thomaslee215@gmail.com">Send us a note</a> to let us know what working with BMB Real Estate has been like for you.</p>
+
+<p style="text-align: center"><img class="aligncenter" alt="Our Privacy Guarantee" src="https://cdn.carrot.com/images/credibility/privacy.png" width="465" height="67" /></p>
+<h2 style="text-align: left"></h2>
 <div class="entry-share">
 <ul class="entry-share-btns">
 
               <li class="entry-share-btn entry-share-btn-facebook">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.noknowshouses.com%2Ftestimonials%2F" title="Share on Facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.noknowshouses.com%2Fsell-your-house%2F" title="Share on Facebook">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64"><path d="M42 12c-5.523 0-10 4.477-10 10v6h-8v8h8v28h8V36h9l2-8H40v-6c0-1.105.895-2 2-2h10v-8H42z" fill="#fff"></svg>
                   <b>Share</b>
                 </a>
@@ -274,7 +287,7 @@
 
 
               <li class="entry-share-btn entry-share-btn-twitter">
-                <a href="https://twitter.com/intent/tweet?text=Testimonials+-+No+Knows+Houses&url=https%3A%2F%2Fwww.noknowshouses.com%2Ftestimonials%2F" title="Share on Twitter">
+                <a href="https://twitter.com/intent/tweet?text=Sell+Your+House+-+No+Knows+Houses&url=https%3A%2F%2Fwww.noknowshouses.com%2Fsell-your-house%2F" title="Share on Twitter">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64"><path d="M64 12.15c-2.355 1.045-4.885 1.75-7.54 2.068 2.71-1.625 4.792-4.198 5.772-7.264-2.537 1.505-5.347 2.597-8.338 3.186-2.395-2.552-5.808-4.146-9.584-4.146-7.25 0-13.13 5.88-13.13 13.13 0 1.03.116 2.03.34 2.992-10.912-.548-20.588-5.775-27.064-13.72-1.13 1.94-1.778 4.196-1.778 6.602 0 4.556 2.318 8.575 5.84 10.93-2.15-.07-4.176-.66-5.946-1.643v.165c0 6.362 4.525 11.668 10.532 12.875-1.102.3-2.262.46-3.46.46-.845 0-1.668-.082-2.47-.235 1.672 5.216 6.52 9.013 12.267 9.118-4.493 3.522-10.154 5.62-16.306 5.62-1.06 0-2.105-.06-3.132-.183 5.81 3.726 12.713 5.9 20.128 5.9 24.15 0 37.358-20.008 37.358-37.36 0-.568-.013-1.135-.038-1.698 2.566-1.85 4.792-4.164 6.552-6.797z" fill="#fff"></svg>
                   <b>Tweet</b>
                 </a>
@@ -282,30 +295,19 @@
 
 </ul>
 </div>
-
-    <blockquote class="blockquote" itemprop="review" itemscope itemtype="http://schema.org/Review">
-      <span itemprop="itemReviewed" class="d-none">BMB Real Estate</span>
-      <p>&#8220;Nearly 4 million Americans are more than 60 days behind on their mortgage, and countless others are only a paycheck away from missing a mortgage payment. You&#8217;re not alone. &#8221;  That&#8217;s why we&#8217;re here, to help home owners like you when you need it most.</p>
-<p><img class="alignleft" alt="foreclosure prevention" src="https://cdn.carrot.com/uploads/Ad-Council_large-1.png" width="155" height="54" /></p>
-      <footer class="text-right">
-        <small>
-                    <span itemprop="author"></span>
-                  </small>
-      </footer>
-    </blockquote>
-    <blockquote class="blockquote" itemprop="review" itemscope itemtype="http://schema.org/Review">
-      <span itemprop="itemReviewed" class="d-none">BMB Real Estate</span>
-      <p>“That which does not kill us makes us stronger.”</p>
-      <footer class="text-right">
-        <small>
-                    <span itemprop="author">Friedrich Nietzsche</span>
-                  </small>
-      </footer>
-    </blockquote>
           </main><!-- /.main -->
                       <aside class="sidebar" role="complementary">
               <section class="widget module text-3 widget_text">			<div class="textwidget"><a href="/the-difference/"><img src="https://cdn.oncarrot.com/uploads/motivated-seller-sidebar-main-offer.png"></a></div>
-		</section><section class="widget module pu_facebook_widget-3 pu_facebook_widget"><h3>Like Us</h3>            <div class="fb-like-box"
+		</section><section class="widget module woo_feedback-2 widget_woo_feedback"><h3>Hear What Others Have To Say&#8230;</h3>
+    <div class="testimonials">
+      <blockquote class="blockquote clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review">
+      <span itemprop="itemReviewed" class="d-none">NoKnows Houses</span>
+      <p>&#8220;Nearly 4 million Americans are more than 60 days behind on their mortgage, and countless others are only a paycheck away from missing a mortgage payment. You&#8217;re not alone. &#8221;  That&#8217;s why we&#8217;re here, to help home owners like you when you need it most.</p>
+<p><img class="alignleft" alt="foreclosure prevention" src="https://cdn.carrot.com/uploads/Ad-Council_large-1.png" width="155" height="54" /></p>
+          </blockquote>
+    </div>
+
+  </section><section class="widget module pu_facebook_widget-3 pu_facebook_widget"><h3>Like Us</h3>            <div class="fb-like-box"
             	data-href="https://www.facebook.com/NoKnowsHouses/"
             	data-width="292"
             	data-show-faces="true"
@@ -314,19 +316,19 @@
             	data-border-color=""></div>
 		</section><section class="widget module widget_sp_image-2 widget_sp_image"><a href="/how-to-stop-foreclosure/" target="_self" class="widget_sp_image-image-link" title="click to stop foreclosure"><img width="321" height="190" alt="click to stop foreclosure" class="attachment-full" style="max-width: 100%;" src="https://cdn.carrot.com/uploads/sites/2507/2013/04/Screen-shot-2013-04-25-at-5.50.46-PM.png" /></a></section>		<section class="widget module recent-posts-3 widget_recent_entries">		<h3>Recent Posts</h3>		<ul>
 											<li>
-					<a href="sell-a-house-with-a-lien-philadelphia.html">Can I Sell A Philadelphia House With a Lien?</a>
+					<a href="https://bornmadebossesre.com//sell-a-house-with-a-lien-philadelphia/">Can I Sell A Philadelphia House With a Lien?</a>
 									</li>
 											<li>
-					<a href="sell-my-house-in-philadelphia.html">SELL MY HOUSE FAST IN PHILADELPHIA: Fact or Myth?</a>
+					<a href="https://bornmadebossesre.com//sell-my-house-fast-in-philadelphia/">SELL MY HOUSE FAST IN PHILADELPHIA: Fact or Myth?</a>
 									</li>
 											<li>
-					<a href="can-you-sell-a-house-as-is-in-philadelphia.html">Can You Sell a House As Is in Philadelphia?</a>
+					<a href="https://bornmadebossesre.com//can-you-sell-a-house-as-is-in-philadelphia/">Can You Sell a House As Is in Philadelphia?</a>
 									</li>
 											<li>
-					<a href="sell-your-house-quickly-for-market-value-in-philadelphia.html">Sell Your House Quickly for Market Value in Philadelphia</a>
+					<a href="https://bornmadebossesre.com//sell-your-house-quickly-for-market-value-in-philadelphia/">Sell Your House Quickly for Market Value in Philadelphia</a>
 									</li>
 											<li>
-					<a href="the-costs-and-taxes-on-selling-a-house-in-philadelphia.html">The Costs and Taxes on Selling a House in Philadelphia</a>
+					<a href="https://bornmadebossesre.com//the-costs-and-taxes-on-selling-a-house-in-philadelphia/">The Costs and Taxes on Selling a House in Philadelphia</a>
 									</li>
 					</ul>
 		</section>            </aside><!-- /.sidebar -->
@@ -346,14 +348,14 @@
   <section class="content-info-bottom">
     <div class="container">
       <nav class="nav-footer">
-        <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="nav"><li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="get-a-cash-offer.html">Get A Cash Offer Today</a></li>
-<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="contact-us.html">Contact Us</a></li>
-<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="how-we-buy-houses.html">How It Works</a></li>
-<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588"><a href="faq.html">Frequently Asked Questions</a></li>
-<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590"><a href="our-company.html">Our Company</a></li>
-<li id="menu-item-592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-592"><a href="resource-page.html">Resources</a></li>
-<li id="menu-item-736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-736"><a href="privacy.html">Privacy Policy</a></li>
-
+        <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="nav"><li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="https://bornmadebossesre.com//get-a-cash-offer-today/">Get A Cash Offer Today</a></li>
+<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="https://bornmadebossesre.com//contact-us/">Contact Us</a></li>
+<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="https://bornmadebossesre.com//how-we-buy-houses/">How It Works</a></li>
+<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588"><a href="https://bornmadebossesre.com//faq/">Frequently Asked Questions</a></li>
+<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590"><a href="https://bornmadebossesre.com//our-company/">Our Company</a></li>
+<li id="menu-item-592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-592"><a href="https://bornmadebossesre.com//resource-page/">Resources</a></li>
+<li id="menu-item-736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-736"><a href="https://bornmadebossesre.com//privacy/">Privacy Policy</a></li>
+<li id="menu-item-580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-580"><a href="https://bornmadebossesre.com//blog/">Blog</a></li>
 </ul></div>      </nav>
       <div class="footer-logo-wrap">
               </div>
@@ -364,7 +366,7 @@
       </div>
 
             <p class="copy">
-        &copy; 2019 BMB Real Estate         - Powered by <a href="https://carrot.com/?utm_source=member&utm_medium=footer&utm_content=noknowsseller&utm_campaign=carrot-01&utm_term=seller" target="_blank">InvestorCarrot</a>      </p>
+        &copy; 2019 NoKnows Houses         - Powered by <a href="https://carrot.com/?utm_source=member&utm_medium=footer&utm_content=noknowsseller&utm_campaign=carrot-01&utm_term=seller" target="_blank">InvestorCarrot</a>      </p>
     </div>
   </section>
 </footer>
@@ -376,7 +378,7 @@
 				  js = d.createElement(s); js.id = id;
 				  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=";
 				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script><script src="https://cdn.carrot.com/artifacts/app/themes/carrot/dist/scripts/main.325bc4c184aae6e669ad.js"></script>
-
-  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"045370bc37","applicationID":"9651406","transactionName":"YlUGMURWV0sEB0xeWFsfMRdfGFBWAQFAGUddQA==","queueTime":2,"applicationTime":170,"atts":"ThIFRwxMREU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+				}(document, 'script', 'facebook-jssdk'));</script><script src="https://cdn.carrot.com/artifacts/app/themes/carrot/dist/scripts/main.e86fb3281a1486ef12ea.js"></script>
+<script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 5) {if(!/(android)/i.test(navigator.userAgent)){jQuery('#input_5_2').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );}} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [5, 1]) } ); </script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"045370bc37","applicationID":"310094017","transactionName":"YlUGMURWV0sEB0xeWFsfMRdfGFBWAQFAGUddQA==","queueTime":0,"applicationTime":212,"atts":"ThIFRwxMREU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
